@@ -9,7 +9,7 @@ var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
-var guessedSoFar = "";
+var guessedSoFar = [""];
 
 //create varialbes that hold reference to html ids where we want to display info
 var winsText = document.getElementById("wins");
@@ -17,28 +17,33 @@ var lossesText = document.getElementById("losses");
 var guessesLeftText = document.getElementById("guessesleft");
 var soFarText = document.getElementById("sofar");
 
-
-
-
-
-
-
+//this function runs when the user presses a key
 document.onkeyup = function(event) {
+
+    //determines which key was pressed
     var userGuess = event.key;
     
     // random computer choice
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 
-if ((userGuess === computerGuess)) {
+if (userGuess === computerGuess) {
     wins++;
     guessesLeft--;
 }
-
     else {
     losses++;
     guessesLeft--;
+    guessedSoFar.push(userGuess);
 }
+
+//display results
+winsText.textContent =  wins;
+lossesText.textContent =   losses;
+guessesLeftText.textContent = guessesLeft;
+soFarText.textContent = guessedSoFar;
+
+
 };
 
 
