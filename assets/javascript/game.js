@@ -36,13 +36,14 @@ document.onkeyup = function (event) {
         }
         else  {
             guessesLeft--;
+            // document.getElementById("guessesleft").innerHTML="" + guessedSoFar.join(" ");
             guessedSoFar.push(userGuess);
         }
     }
 
     if (guessesLeft === 0){
         losses++;
-        alert("Game Over!");
+        alert("You Lost, test your psychic abilities again.");
         newGame();
     }
 

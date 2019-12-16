@@ -1,3 +1,48 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url("../images/psychic-reading-sign.jpg");
+    background-repeat: repeat;
+}
+
+header {
+    width:100%;
+    background-color: papayawhip;
+    margin-bottom: 150px;
+    border-bottom: solid 2px #5edce6;
+}
+#title {
+    text-align: center;
+}
+.content {
+    text-align: center;
+    width: 600px;
+    padding: 20px;
+    margin: 100px;
+    color: #5edce6;
+    background-color: papayawhip;
+    border: solid 2px #5edce6;
+
+}
+
+h1 {
+    font-size: 34px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #5edce6;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 45px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
