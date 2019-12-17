@@ -13,20 +13,26 @@ var lossesText = document.getElementById("losses");
 var guessesLeftText = document.getElementById("guessesleft");
 var soFarText = document.getElementById("sofar");
 
-var newGame = function(){
-guessedSoFar = [""];
-guessesLeft = 9;
-computerGuess();
-soFarText();
+
+
+
+
+
+var newGame = function () {
+    guessedSoFar = [""];
+    guessesLeft = 9;
+    
+    soFarText();
+    console.log(computerGuess);
 }
 //this function runs when the user presses a key
 document.onkeyup = function (event) {
 
     //determines which key was pressed
     var userGuess = event.key;
-
-    // random computer choice
+// random computer choice
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    
     if (guessesLeft > 0) {
 
         if (userGuess === computerGuess) {
@@ -34,14 +40,14 @@ document.onkeyup = function (event) {
             alert("You've won, you have psychic abilities");
             newGame();
         }
-        else  {
+        else {
             guessesLeft--;
             // document.getElementById("guessesleft").innerHTML="" + guessedSoFar.join(" ");
             guessedSoFar.push(userGuess);
         }
     }
 
-    if (guessesLeft === 0){
+    if (guessesLeft === 0) {
         losses++;
         alert("You Lost, test your psychic abilities again.");
         newGame();
