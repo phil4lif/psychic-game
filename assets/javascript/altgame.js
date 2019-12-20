@@ -20,7 +20,7 @@ var letterGenerator = function () {
 //makes a newgame function
 var newGame = function () {
     letterGenerator();
-    guessedSoFar = [];
+    guessedSoFar = [""];
     guessesLeft = 9;
 
 }
@@ -55,34 +55,24 @@ document.onkeyup = function (e) {
                 }
                 else {
                     guessesLeft--;
-                    
-
 
                 }
-                if (guessesLeft === 0) {
-                    lossFunction()
-                }
-                guessedSoFarText.textContent = guessedSoFar;
-                winsText.textContent = wins;
-                lossesText.textContent = losses;
-                guessesLeftText.textContent = guessesLeft;
-
             }
+
+            if (guessesLeft === 0) {
+                lossFunction()
+            }
+
+
+
+            document.getElementById("sofar").textContent = guessedSoFar;
+            winsText.textContent = wins;
+            lossesText.textContent = losses;
+            guessesLeftText.textContent = guessesLeft;
 
         }
     }
 
 
-
-    //checks to see if the guess is correct
-
-
-    //if it is correct runs the victory function
-
-
-
-    //adds to lettersGuessed if incorrect
-
-    //if the user has used all of their guesses then run the victory function
 
 }
