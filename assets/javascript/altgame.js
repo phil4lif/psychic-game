@@ -8,7 +8,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var userGuess = "";
 var guessesLeft = 9;
 //variables that will refer to the html page
-var guessedSoFarText = document.getElementById("#sofar");
+var guessedSoFarText = document.getElementById("sofar");
 var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
 var guessesLeftText = document.getElementById("guessesleft");
@@ -20,7 +20,7 @@ var letterGenerator = function () {
 //makes a newgame function
 var newGame = function () {
     letterGenerator();
-    guessedSoFarText = [""];
+    guessedSoFar = [];
     guessesLeft = 9;
 
 }
@@ -46,7 +46,7 @@ document.onkeyup = function (e) {
         document.onkeyup = function (event) {
             userGuess = event.key;
             console.log(userGuess);
-
+            guessedSoFar.push(userGuess);
 
             if (guessesLeft > 0) {
 
@@ -55,17 +55,14 @@ document.onkeyup = function (e) {
                 }
                 else {
                     guessesLeft--;
-                    guessedSoFar.push(userGuess);
-                    console.log(guessedSoFar);
-                    // guessedSoFarText.innerHTML="" + guessedSoFar.join(" ");
-                    // guessedSoFarText.textContent = guessedSoFar[" "];
-                    guessedSoFarText.textContent = guessedSoFar;
+                    
+
 
                 }
                 if (guessesLeft === 0) {
                     lossFunction()
                 }
-
+                guessedSoFarText.textContent = guessedSoFar;
                 winsText.textContent = wins;
                 lossesText.textContent = losses;
                 guessesLeftText.textContent = guessesLeft;
